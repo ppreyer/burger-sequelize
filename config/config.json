@@ -2,18 +2,22 @@
   "development": {
     "username": "root",
     "password": "rolltribe1",
-    "database": "database_development",
+    "database": "burger-sequelize",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": "rolltribe1",
-    "database": "database_test",
+    "database": "burger-sequelize",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "production": {
+    "production": {
+    "username": "root",
+    "password": "rolltribe1",
+    "database": "burger-sequelize",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }
