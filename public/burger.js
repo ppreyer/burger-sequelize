@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
   $(".submit").on("click", addBurger);
+  console.log("button clicked");
+});
 
 var burgers = [];
 
@@ -11,17 +13,26 @@ function addBurger(event) {
       devoured: false
     };
   console.log("A new burger", newBurger);
-  
-  $.post("/api/burgers", newBurger, getBurgers)
+    $.post("/burgers", newBurger, getBurgers)
     $(".new-burger").val("");
-}
+};
 
 function getBurgers() {
-  $.get("/api/burgers", function(err, data) {
+  $.get("/burgers", function(err, data) {
     burgers = data;
-    console.log("Burger Data", burgers);
-  })
+  });
 }
 
+// function displayBurgers() {
+//   $(".burger-container").empty();
+//   var burgersToAdd = [];
+//   for(var i = 0; i < burgers.length; i++) {
+//     burgersToAdd.push(createNewRow(burgers[i]));
+//   }
+//   $(".burger-container").append(burgersToAdd);
+// }
 
-});
+// function createNewRow(burger) {
+//   var html = "<div>";
+//   html += burger.burger_name
+// }
