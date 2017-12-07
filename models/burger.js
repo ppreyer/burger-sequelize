@@ -3,6 +3,9 @@ module.exports = function(sequelize, DataTypes) {
     burger_name: 
       {
         type: DataTypes.STRING
+        // validate: {
+        //   notNull: true
+        // }
       },
     devoured:
       {

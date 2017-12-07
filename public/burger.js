@@ -1,8 +1,15 @@
 $(document).ready(function() {
 
-  $(".submit").on("click", addBurger);
+  $(document).on("click", ".submit", addBurger);
   console.log("button clicked");
+
 });
+
+// $(document).on("click", ".devourBurger", deleteBurger);
+//   console.log("burger deleted");
+
+$(document).on("click", ".devourBurger", devourBurger);
+  console.log("burger updated");
 
 var burgers = [];
 
@@ -20,8 +27,31 @@ function addBurger(event) {
 function getBurgers() {
   $.get("/burgers", function(err, data) {
     burgers = data;
+    location.reload();
+  });
+};
+
+function deleteBurger() {
+  $(".devourBurger").click(function() {
+    var id = this.id;
+    $.ajax({
+      url: "/burgers/" + id,
+      type: "DELETE"
+    }).then(function() {
+    location.reload();
+  });
   });
 }
+
+function devourBurger() {
+    var id = this.id;
+    console.log("ID NUMBER", id);
+    $.ajax({
+      url: "/burgers/" + id,
+      type: "PUT"
+    }).then(getBurgers);
+};
+
 
 // function displayBurgers() {
 //   $(".burger-container").empty();
