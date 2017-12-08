@@ -1,214 +1,71 @@
+<div class="container-narrow">
 
-   <div class="container-narrow">
-
-      <div class="masthead">
+    <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="/burgers">Home</a></li>
-          <li><a href="https://www.linkedin.com/in/parkerpreyer/" target="_blank">Linkedin</a></li>
-          <li><a href="https://github.com/ppreyer/burger-sequelize" target="_blank">Github</a></li>
+            <li class="active"><a href="/burgers">Home</a></li>
+            <li><a href="https://www.linkedin.com/in/parkerpreyer/" target="_blank">Linkedin</a></li>
+            <li><a href="https://github.com/ppreyer/burger-sequelize" target="_blank">Github</a></li>
         </ul>
         <h3 class="muted">The Burger Shop</h3>
-      </div>
+    </div>
 
-      <hr>
+    <hr>
 
-      <div class="jumbotron">
+    <div class="jumbotron">
         <h1>The Burger Shop</h1>
 
         <input class="new-burger" type="search" placeholder="Burger Order" id="example-search-input">
-       <button type="submit" class="btn btn-large btn-success submit">Add a Burger</button>
-      </div>
-
-      <hr>
-
-
-<div class="row">
-  <center>
-    <!-- Left side (ready to eat) -->
-    <div class="col-md-6">
-      <h4>Uneaten Burgers</h4>
-      <div id="ready_to_eat">
-
-        <!-- Dynamically Insert Ready Burgers Here -->
-        {{#each burgers}}
-          {{#unless devoured}}
-              <div class="input-group col-md-12 col-xs-12">
-                 <div class="col-md-8 col-xs-7">{{id}}. {{burger_name}}</div>
-                 <div class="col-md-4 col-xs-5"><input name="customer" type="text" class="form-control bugerEaterTextBox" placeholder="Customer Name"></div>
-                <span class="input-group-btn devour-button">
-                  <button class="btn btn-primary devourBurger" id={{this.id}}>Devour</button>
-                </span>
-              </div>
-            </form>              
-          {{/unless}}
-        {{/each}}
-
-      </div>
+        <button type="submit" class="btn btn-large btn-success submit">Add a Burger</button>
     </div>
 
-      <!-- Right side (already eaten) -->
-    <div class="col-md-6">
-      <h4>Devoured Burgers</h4>
-      <div id="already_eaten">
+    <hr>
 
-        <!-- Dynamically Insert Eaten Burgers Here -->
-        {{#each burgers}}
-          {{#if this.devoured}}
-            <div class="input-group col-md-12 col-xs-12">
-                <div>{{this.id}}: {{this.burger_name}} </div>
-                {{!-- <div class="col-md-6 col-xs-6"><i>(Eaten by {{this.devourer.devourer_name}})</i></div> --}}
-            </div>
-          {{/if}}
-        {{/each}}
-
-      </div>
-    </div>
-  </center>
-</div>
-
-{{!--       <div class="row-fluid marketing">
-        <div class="span6">
-          <div class="row">
-          <h4 class="cat">Uneaten Burgers</h4>
-          <div class="col-md-4 eat">
-          {{#each burgers}}
-            {{#unless this.devoured}}
-              <p>{{this.id}}: {{this.burger_name}} </p>
-            {{/unless}}
-          {{/each}}
-        </div>
-        <div class="col-md-2">
-          {{#each burgers}}
-            {{#unless this.devoured}}
-               <button class="btn btn-primary devourBurger" id={{this.id}}>Devour</button>
-            {{/unless}}
-          {{/each}}
-        </div>
-        </div>
-
-        </div>
-
-        <div class="span6">
-          <h4 class="cat">Devoured Burgers</h4>
-          <div class="col-md-4 eat">
-          {{#each burgers}}
-            {{#if this.devoured}}
-              <p>{{this.id}}: {{this.burger_name}} </p>
-            {{/if}}
-          {{/each}}
-        </div>
-        </div>
-      </div> --}}
-
-      <hr>
-
-      <div class="footer">
-        <p>&copy; Parker Preyer 2017</p>
-      </div>
-
-    </div> <!-- /container -->
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{!-- <!DOCTYPE html>
-<html lang="en"> --}}
-{{!-- 
-<head>
-  <meta charset="UTF-8">
-  <title>Burger Shop</title>
-  <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./style.css" media="screen" title="no title">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head> --}}
-
-{{!-- <div class="container">
 
     <div class="row">
-      <div class='col-md-2' id="uneaten">
-        <div class="alive">
-          {{#each burgers}}
-            {{#unless this.devoured}}
-              <p>{{this.id}}: {{this.burger_name}} </p>
-            {{/unless}}
-          {{/each}}
-        </div>
-      </div>
-       <div class='col-md-2' id="uneaten">
-        <div class="alive">
-          {{#each burgers}}
-            {{#unless this.devoured}}
-               <button class="btn btn-primary devourBurger" id={{this.id}}>Devour</button>
-            {{/unless}}
-          {{/each}}
-        </div>
-      </div>
-      <div class="col-md-2">
-        <div class="devoured">
-          {{#each burgers}}
-            {{#if this.devoured}}
-              <p>{{this.id}}: {{this.burger_name}}</p>
-            {{/if}}
-          {{/each}}
-        </div>
-      </div>
+        <center>
+            <!-- Left side (ready to eat) -->
+            <div class="col-md-6">
+                <h4>Uneaten Burgers</h4>
+                <div id="ready_to_eat">
 
-      <input class="new-burger" type="search" placeholder="May I take your order?" id="example-search-input">
-        <button type="submit" class="btn btn-primary submit">Add a Burger</button>
+                    <!-- Dynamically Insert Ready Burgers Here -->
+                    {{#each burgers}} {{#unless devoured}}
+                    <div class="input-group col-md-12 col-xs-12">
+                        <div class="col-md-8 col-xs-7">{{id}}. {{burger_name}}</div>
+                        <div class="col-md-4 col-xs-5"><input name="customer" type="text" class="form-control bugerEaterTextBox" placeholder="Customer Name"></div>
+                        <span class="input-group-btn devour-button">
+                  <button class="btn btn-primary devourBurger" id={{this.id}}>Devour</button>
+                </span>
+                    </div>
+                    </form>
+                    {{/unless}} {{/each}}
 
+                </div>
+            </div>
+
+            <!-- Right side (already eaten) -->
+            <div class="col-md-6">
+                <h4>Devoured Burgers</h4>
+                <div id="already_eaten">
+
+                    <!-- Dynamically Insert Eaten Burgers Here -->
+                    {{#each burgers}} {{#if this.devoured}}
+                    <div class="input-group col-md-12 col-xs-12">
+                        <div>{{this.id}}: {{this.burger_name}} </div>
+                        {{!--
+                        <div class="col-md-6 col-xs-6"><i>(Eaten by {{this.devourer.devourer_name}})</i></div> --}}
+                    </div>
+                    {{/if}} {{/each}}
+
+                </div>
+            </div>
+        </center>
     </div>
-  </div>
 
-  </div>
- --}}
+    <hr>
+
+    <div class="footer">
+        <p>&copy; Parker Preyer 2017</p>
+    </div>
+
+</div>
