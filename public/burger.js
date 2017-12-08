@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
   $(document).on("click", ".submit", addBurger);
-  console.log("button clicked");
 
 });
 
@@ -26,7 +25,7 @@ function addBurger(event) {
 
 function getBurgers() {
   $.get("/burgers", function(err, data) {
-    burgers = data;
+    // burgers = data;
     location.reload();
   });
 };
