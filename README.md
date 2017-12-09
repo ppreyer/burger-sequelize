@@ -16,11 +16,11 @@ Using an home-grown ORM, the app has 3 basic CRUD functions
     a. hits a route in Express to insert a new burger into the MySQL database
     b. re-routes the webpage back to the index, where the burger is now ready to be eaten column (via Handlebars)
     
-Screenshot
+## Screenshot
 
 <img width="590" alt="burger_shop" src="https://user-images.githubusercontent.com/1817873/33796838-9c446ace-dcca-11e7-9849-a0bb2f90af08.PNG">
 
-Technologies Used:
+## Technologies Used:
 
 Javascript nodeJS expressJS npm packages: fs express-handlebars mysql path body-parser CSS: Twitter Bootstrap
 
